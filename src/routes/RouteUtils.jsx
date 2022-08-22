@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Switch, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { APP_VALUE_URL } from '../constants/app'
 
 export const HomeRedirect = () => <Navigate to={`/${APP_VALUE_URL.ROOT_ROUTE}`} />
 
 export const renderRoutes = (routes, extraProps = {}, switchProps = {}) =>
 	routes ? (
-		<Switch {...switchProps}>
+		<Routes {...switchProps}>
 			{routes.map((route, i) => (
 				<Route
 					exact={route.exact}
@@ -18,5 +18,5 @@ export const renderRoutes = (routes, extraProps = {}, switchProps = {}) =>
 					strict={route.strict}
 				/>
 			))}
-		</Switch>
+		</Routes>
 	) : null

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 const RouteController = props => {
 	const { component: Component, texto: Texto, fondo: Fondo, ...rest } = props
@@ -20,7 +20,7 @@ const RouteController = props => {
 	}
 	useEffect(init, [])
 
-	return isTokenOk ? <Component {...rest} texto={Texto} fondo={Fondo} /> : <Redirect to={'/login'} />
+	return isTokenOk ? <Component {...rest} texto={Texto} fondo={Fondo} /> : <Navigate to={'/login'} />
 }
 
 export default RouteController

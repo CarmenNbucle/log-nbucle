@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Navigate } from 'react-router-dom'
 import { APP_VALUE_URL } from '../constants/app'
 
-export const HomeRedirect = () => <Redirect to={`/${APP_VALUE_URL.ROOT_ROUTE}`} />
+export const HomeRedirect = () => <Navigate to={`/${APP_VALUE_URL.ROOT_ROUTE}`} />
 
 export const renderRoutes = (routes, extraProps = {}, switchProps = {}) =>
 	routes ? (

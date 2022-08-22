@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import { Box, Stack, AppBar, Avatar, Toolbar, IconButton, Menu, MenuItem, List, ListItem, ListItemAvatar, ListItemText, Typography, Divider, Grid } from '@mui/material'
 import { MHidden } from '../@material-extend'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 import { MainContext, APP_STATE } from '../../../Context/MainContext'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
@@ -61,7 +61,7 @@ const Header = ({ onOpenSidebar, isOpenSidebarDesktop, onSidebarDesktop, texto, 
 	const { globalState, globalDispatch } = useContext(MainContext)
 	const [anchorEl, setAnchorEl] = useState(null)
 	const openMenu = Boolean(anchorEl)
-	const { push } = useHistory()
+	const { push } = useNavigate()
 
 	const handleClose = () => {
 		setAnchorEl(null)

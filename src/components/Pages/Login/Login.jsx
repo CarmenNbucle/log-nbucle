@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Grid, CssBaseline, Paper, Avatar, Typography, TextField, Button, InputAdornment, IconButton, LinearProgress, Box, Link } from '@mui/material'
 import { LockOpen, Visibility, VisibilityOff, LockOutlined } from '@mui/icons-material'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ApiRequest from '../../../helpers/axiosInstances'
 import { MainContext, APP_STATE, AUTH_TYPES } from '../../../Context/MainContext'
 import ToastAutoHide from '../../common/ToastAutoHide'
@@ -73,7 +73,7 @@ const Login = () => {
 	const [showPass, setShowPass] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
 	const [mensaje, setMensaje] = useState({ ident: null, message: null, type: null })
-	const { push } = useHistory()
+	const { push } = useNavigate()
 
 	const onChange = e => {
 		const { name, value } = e.target
